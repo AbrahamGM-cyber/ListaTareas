@@ -1,0 +1,31 @@
+<%- include ../layouts/cabecera.ejs %>
+<br/>
+<br/>
+<br/>
+<form method="post" action="/Asignaturas">
+
+    <div class="form-group">
+        <label for="my-input">Materia:</label>
+        <input id="my-input" class="form-control" type="text" name="Materia">
+    </div>
+
+    <div class="form-group">
+        <label for="my-input">Entrega:</label>
+        <input id="my-input" class="form-control" type="text" name="Entrega">
+    </div>
+
+    <div class="form-group">
+        <label for="my-input">Estatus:</label>
+        <input id="my-input" class="form-control" type="text" name="Estatus">
+    </div>
+
+    <div class="form-group">
+        <label for="my-input">Descripcion:</label>
+        <input id="my-input" class="form-control" type="text" name="Descripcion">
+    </div>
+    
+<button class="btn btn-danger" type="submit">Guardar</button>
+
+</form>
+
+<%- include ../layouts/pie.ejs %>
