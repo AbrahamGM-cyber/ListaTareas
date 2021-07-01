@@ -4,7 +4,8 @@ const AsignaturasControllers = require('../controllers/AsignaturaControllers')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.send("Bienvenido a la Mochila");
+  res.render('index');
 });
 
 module.exports = router;
+git

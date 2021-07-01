@@ -19,7 +19,7 @@ module.exports= {
   guardar:function (req, res) {
     console.log(req.body);
     asignatura.insertar(conexion,req.body, function (err){  
-     res.redirect('/Asignaturas');
+     res.redirect('/');
     })
   },
   eliminar:function (req, res) {
@@ -34,7 +34,7 @@ module.exports= {
    console.log(req.params.materia)
     });
     asignatura.eliminar(conexion, req.params.materia, function (err){  
-     res.redirect('/Asignaturas');
+     res.redirect('/');
     })
   }
   }
