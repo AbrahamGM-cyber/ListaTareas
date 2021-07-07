@@ -1,42 +1,11 @@
-const mongoose = require("mongoose");
-// const url = "mongodb://localhost/test";
-const url = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.gursr.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+const mongoose = require('mongoose');
 
-// import database configuration
-//import configDatabase from '../config/database';
+const usuario = "Henshin_50"
+const password = "vJvERx7uaSRT8q4U"
+const dbName = "Asignatura"
 
-// import all models sequelize
-//import User from '../app/models/User';
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.gursr.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 
-// Add models to array
-// const models = [];
-
-class Db {
-	constructor() {
-		this.init();
-		this.mongo();
-	}
-
-	init() {
-		//this.connection = new Sequelize(configDatabase);
-		//models.map(model => model.init(this.connection));
-	}
-
-	mongo() {
-		this.mongoConnection = mongoose
-			.connect(url, {
-				useNewUrlParser: true,
-				useUnifiedTopology: true,
-				useFindAndModify: false,
-				useCreateIndex: true,
-			})
-			.then(() => console.log("conectado a mongod"))
-			.catch((e) => {
-				console.log("no se pudo concetar a mongod");
-				// console.log(`el erro de conexion es: ${e}`)
-				this.mongo();
-			});
-	}
-}
-
-module.exports = new Db();
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(()=> console.log('conectado a mongodb')) 
+  .catch(e => console.log('error de conexión', e))
